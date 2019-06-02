@@ -1,13 +1,16 @@
 # The Cellar
 This repository contains download streams for pretrained models for a variety of tasks, including instructions on how to load, modify, operate, and use them. This is being updated all the time when fresher models are trained, but do be patient as networks train very slow! If you have any questions, recommendations, comments, or model requests, do be sure to drop by our issues tracker.
 
+## Model Request
+To ensure that lab and intellectual property is kept intact, we're currently employing a request form for pretrained models. Send us a request if you need a model using this [link](https://forms.gle/Dj1ryowfGYNSxJDB8).
+
 ## Transfer Learning Models
 
 ### BERT
 We provide pretrained BERT (Devlin, et al., 2019) models in Filipino, in both cased and uncased form. We only provide base models (12 layers, 12 heads, 768 units) as the large models are unwieldy and are very expensive to train (the latest one trained in a Google Cloud TPU for 2 weeks and it still lagged in performance behind the base models).
 
-* BERT Tagalog Base Uncased [Link](#)
-* BERT Tagalog Base Cased [Link](#)
+* BERT Tagalog Base Uncased 
+* BERT Tagalog Base Cased
 
 The pretrained models are in TensorFlow's checkpoint format so it is compatibe for use with their TPU code (CPU usage and GPU usage has not been verified at this point, so we'd have to stick with TPUs). We can convert them to PyTorch checkpoints for use with GPUs. A modified copy of [HuggingFace](https://github.com/huggingface)'s [BERT implementation](https://github.com/huggingface/pytorch-pretrained-BERT) is included in the repository, so be sure to check for installation instructions there. We have also modified this repository to allow more classification tasks other than GLUE and SQuAD.
 
@@ -20,7 +23,7 @@ The pretrained models are in TensorFlow's checkpoint format so it is compatibe f
 ### ULMFiT
 We provide a pretrained AWD-LSTM (Merity, et al., 2017) model in Filipino that can be finetuned to a classifier using ULMFiT (Howard & Ruder, 2018). We only provide one model. Do note that we still cannot release our training, finetuning, and scaffolding code as the work related to it is under review in a conference. We'll update this repo as soon as anonymity period stops!
 
-* Pretrained AWD-LSTM [Link](#)
+* Pretrained AWD-LSTM 
 
 While we use our own handwritten scaffolding, we have done extra work to ensure that our pretrained checkpoints are compatible with this library called [FastAI](https://github.com/fastai/fastai) (yay!), which to this date, is still the only reliable implementation of ULMFiT. We'll add in our own finetuning code (standalone, no need for extra packages) to this repository soonest we can. To use the model, you can follow the instructions in the FastAI repository.
 
@@ -39,7 +42,7 @@ This is currently a work in progress. We will release a pretrained GPT-2 (Radfor
 ### SentencePiece
 We provide a pretrained SentencePiece model for BPE subword tokenization (Seinnrich, et al., 2016). All modern translation models use subword tokenization now.
 
-* Pretrained SentencePiece [Link](#)
+* Pretrained SentencePiece
 
 **Requirements**
 * SentencePiece -- All the instructions are in Google [repository](https://github.com/google/sentencepiece). Be sure to use the same version of compilers listed in their system requirements.
@@ -49,12 +52,20 @@ We provide a pretrained SentencePiece model for BPE subword tokenization (Seinnr
 ### Monolingual Embeddings
 We provide monolingual embeddings in both GloVe and Fasttext formats.
 
-*Uploads in progress.*
+* GloVe Tagalog 300d
+* GloVe Tagalog 200d
+* Fasttext Tagalog 300d
 
 ### Mutiliungual Embeddings
 We provide multillingual and cross-lingual embeddings in the Fasttext format via MUSE (Lample, et al., 2018), as well as other models in other vector-alignment techniques.
 
-*Uploads in progress.*
+* Fasttext Tagalog-English 300d
+* Fasttext English-Tagalog 300d
+
+## Text Corpora
+
+### Language Modeling
+We'll share our large scale dumps of text corpora for training language models soonest the anonymity period drops for the conference our work is on. Stay tuned!
 
 ## Footnotes
 We would like to thank the TensorFow Research Cloud initiative for making TPUs more accessible, alllowing us to perform benchmarks on BERT models in Philippine languages. If you have any comments or concerns, do be sure to drop by our issues tracker!
